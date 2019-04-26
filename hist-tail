@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 
-hist "$@" | tail
+num=10
+if isnum "$1"; then
+	num="$1"
+	shift
+fi
+
+hist "$@" | tail -n "$num"
