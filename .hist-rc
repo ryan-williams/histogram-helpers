@@ -28,4 +28,15 @@ alias hvr="hist-hist-xs -r"
 defn cdt count-distinct
 defn dtn count-distinct
 
-defn sbk sum-by-key
+sum_by_key() {
+    awk '{key=""; for (i=2; i<=NF; i++) key = key $i (i==NF ? "" : " "); sum[key] += $1} END {for (key in sum) print sum[key], key}' "$@" | sort -n
+}
+export -f sum_by_key
+defn sbk sum_by_key
+
+sum_by_key_iec() {
+    sum_by_key "$@" | numfmt --to=iec
+}
+export -f sum_by_key_iec
+defn sbkh sum_by_key_iec
+defn sbki sum_by_key_iec

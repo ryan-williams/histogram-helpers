@@ -9,7 +9,7 @@ for line in fileinput.input(sys.argv[1:]):
 	pieces = re.match('\s*(\d+)\s*(.*)', line)
 	count = int(pieces.group(1))
 	key = pieces.group(2)
-	if not key in sums:
+	if key not in sums:
 		sums[key] = 0
 	sums[key] += count
 
