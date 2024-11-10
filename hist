@@ -5,17 +5,12 @@ num=
 sort_col=1
 while getopts "rsn" opt; do
   case $opt in
-    r)
-      reverse="-r"
-    ;;
-    s)
-      # sort output by second column
-      sort_col=2
-    ;;
-    n)
-      sort_col=2
-      num="-n"
-    ;;
+    r) reverse="-r" ;;
+    s) sort_col=2 ;;
+    n) sort_col=2 ; num="-n" ;;
+    *)
+      echo "Usage: $0 [-r] [-s] [-n] [file]" >&2
+      exit 1
   esac
 done
 

@@ -9,9 +9,14 @@ alias histx=hist-xs
 
 alias hs=hist
 alias hst=hist
-alias hss="hist -s"
 alias hsn="hist -n"
+alias hstn="hist -n"
 alias hsr="hist -r"
+alias hstr="hist -r"
+alias hss="hist -s"
+alias hssn="hist -sn"
+alias hsts="hist -s"
+alias hstsn="hist -sn"
 
 alias hhx=hist-hist-xs
 alias hrx=hist-hist-xs
